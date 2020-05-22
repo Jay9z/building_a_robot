@@ -1,0 +1,18 @@
+Build a robot with camera
+
+## Pre-requisites
+1. ROS
+
+
+## Install
+    mkdir my_robot
+    cd my_robot
+    mkdir src
+    cd src
+    git clone ###
+    cd ../..
+    catkin_make
+
+
+## How to use
+
