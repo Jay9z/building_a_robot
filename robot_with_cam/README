@@ -17,5 +17,3 @@ Build a robot with camera
 1. source devel/setup.bash
 2. rosrun my_robot my_robot
 
-
-
