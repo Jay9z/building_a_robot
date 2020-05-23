@@ -1,19 +1,55 @@
-Build a robot with camera
+Build a robot with camera, and drive it with message and service
 
 ## Pre-requisites
 1. ROS
 
 
 ## Install
-    mkdir -p my_robot/src
-    cd my_robot/src
-    catkin_init_workspace
-    git clone -b robot_with_cam  https://github.com/Jay9z/building_a_robot.git my_robot
-    cd ..
-    catkin_make
+
+    $mkdir -p ~/ros_robocam/src
+    $cd ~/ros_robocam
+    $catkin_init_workspace
+    $cd src
+    $git clone -b robot_with_cam  https://github.com/Jay9z/building_a_robot.git simple_arm
+    $cd ..
+    $catkin_make
 
 
 ## How to use
-1. source devel/setup.bash
-2. rosrun my_robot my_robot
 
+### drive robot move along a fixed path
+Open 1st terminal
+
+    $cd ~/ros_robocam
+    $source devel/setup.bash
+    $roslanuch simple_arm my_robot robot_spawn.launch
+
+Open 2nd termial
+
+    $cd ~/ros_robocam
+    $source devel/setup.bash
+    $rosrun simple_arm simple_move
+
+### drive robot with serivce
+Open 1st terminal
+    $source devel/setup.bash
+    $roslanuch simple_arm my_robot robot_spawn2.launch
+Open 2nd terminal
+    $source devel/setup.bash
+    $rosservice call /arm_mover/safe_move  0 0
+
+### drive robot with camera
+Open 1st terminal
+
+    $source devel/setup.bash
+    $roslanuch simple_arm my_robot robot_spawn3.launch
+
+Open 2st terminal
+
+    $source devel/setup.bash
+    $rqt_image_view /rgb_camera/image_raw
+
+Open 3nd terminal
+
+    $source devel/setup.bash
+    $rosservice call /arm_mover/safe_move  0 0
