@@ -1,5 +1,5 @@
 # Build A Robot
-simulation robot with gazebo and rviz
+Simulate robot in myroom with gazebo and rviz
 
 ## Introduction
 
